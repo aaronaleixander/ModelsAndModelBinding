@@ -50,7 +50,11 @@ namespace ModelsAndModelBinding.Controllers
             if (ModelState.IsValid)
             {
                 // Add to database
+                StudentDb.Register(s);
+
                 // Display success message
+                ViewData["Success"] = "Student was succesfully registered!";
+                return View();
             }
             return View();
         }
